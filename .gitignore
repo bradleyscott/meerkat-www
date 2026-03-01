@@ -1,0 +1,12 @@
+# OS files
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Local Netlify folder
+.netlify/

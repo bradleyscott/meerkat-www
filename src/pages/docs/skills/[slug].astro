@@ -1,0 +1,50 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro';
+import { getSkills, getSkillPage } from '../../../lib/content';
+
+export function getStaticPaths() {
+  const skills = getSkills();
+  return skills.map((s) => ({ params: { slug: s.slug } }));
+}
+
+const { slug } = Astro.params;
+const page = getSkillPage(slug);
+---
+
+<DocsLayout title={page.title} breadcrumbs={page.breadcrumbs}>
+  <div class="skill-meta">
+    {page.frontmatter.description && (
+      <p class="skill-description">{(page.frontmatter.description as string).trim()}</p>
+    )}
+    {page.frontmatter.compatibility && (
+      <span class="skill-badge">{page.frontmatter.compatibility}</span>
+    )}
+  </div>
+  <Fragment set:html={page.html} />
+</DocsLayout>
+
+<style>
+  .skill-meta {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(245, 230, 211, 0.06);
+  }
+
+  .skill-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--slate);
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-badge {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    background: rgba(91, 140, 110, 0.1);
+    border: 1px solid rgba(91, 140, 110, 0.2);
+    color: var(--sage);
+    font-size: 0.78rem;
+    font-weight: 500;
+  }
+</style>

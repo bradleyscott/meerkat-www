@@ -1,0 +1,10 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import { getWhyPage } from '../../lib/content';
+
+const page = getWhyPage();
+---
+
+<DocsLayout title={page.title} breadcrumbs={page.breadcrumbs}>
+  <Fragment set:html={page.html} />
+</DocsLayout>

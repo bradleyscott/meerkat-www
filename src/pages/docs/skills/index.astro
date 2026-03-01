@@ -1,0 +1,10 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro';
+import { getSkillsOverview } from '../../../lib/content';
+
+const page = getSkillsOverview();
+---
+
+<DocsLayout title={page.title} breadcrumbs={page.breadcrumbs}>
+  <Fragment set:html={page.html} />
+</DocsLayout>

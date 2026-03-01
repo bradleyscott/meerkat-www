@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="headGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4956A"/>
+      <stop offset="100%" style="stop-color:#B8754A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="128" cy="128" r="124" fill="#1B2B3A"/>
+
+  <!-- Head scaled up 1.25x, centered in circle -->
+  <g transform="translate(128,128) scale(1.25) translate(-128,-128)">
+    <!-- Head shape -->
+    <ellipse cx="128" cy="138" rx="68" ry="62" fill="url(#headGrad)"/>
+
+    <!-- Ears -->
+    <ellipse cx="76" cy="90" rx="20" ry="14" fill="#D4956A" transform="rotate(-15,76,90)"/>
+    <ellipse cx="76" cy="90" rx="13" ry="9" fill="#2A2A2A" transform="rotate(-15,76,90)"/>
+    <ellipse cx="180" cy="90" rx="20" ry="14" fill="#D4956A" transform="rotate(15,180,90)"/>
+    <ellipse cx="180" cy="90" rx="13" ry="9" fill="#2A2A2A" transform="rotate(15,180,90)"/>
+
+    <!-- Eye mask patches -->
+    <ellipse cx="104" cy="134" rx="26" ry="20" fill="#2A2A2A"/>
+    <ellipse cx="152" cy="134" rx="26" ry="20" fill="#2A2A2A"/>
+
+    <!-- Eyes -->
+    <circle cx="104" cy="132" r="13" fill="white"/>
+    <circle cx="152" cy="132" r="13" fill="white"/>
+    <circle cx="107" cy="130" r="7.5" fill="#1B2B3A"/>
+    <circle cx="155" cy="130" r="7.5" fill="#1B2B3A"/>
+    <circle cx="110" cy="127" r="2.8" fill="white"/>
+    <circle cx="158" cy="127" r="2.8" fill="white"/>
+
+    <!-- Nose -->
+    <ellipse cx="128" cy="156" rx="9" ry="6.5" fill="#2A2A2A"/>
+
+    <!-- Mouth -->
+    <path d="M121 163 Q128 170 135 163" stroke="#2A2A2A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

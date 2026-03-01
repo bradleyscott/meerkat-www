@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4956A"/>
+      <stop offset="100%" style="stop-color:#B8754A"/>
+    </linearGradient>
+    <linearGradient id="bellyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5E6D3"/>
+      <stop offset="100%" style="stop-color:#EDDCC8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="248" fill="#1B2B3A"/>
+
+  <!-- Meerkat figure scaled up 1.25x, centered in circle -->
+  <g transform="translate(256,256) scale(1.25) translate(-256,-256)">
+    <!-- Tail behind body -->
+    <path d="M340 380 Q370 350 355 310" stroke="#C48558" stroke-width="12" fill="none" stroke-linecap="round"/>
+
+    <!-- Body / torso -->
+    <ellipse cx="256" cy="310" rx="88" ry="120" fill="url(#bodyGrad)"/>
+
+    <!-- Belly patch -->
+    <ellipse cx="256" cy="325" rx="58" ry="90" fill="url(#bellyGrad)"/>
+
+    <!-- Head -->
+    <ellipse cx="256" cy="175" rx="72" ry="65" fill="#D4956A"/>
+
+    <!-- Ears -->
+    <ellipse cx="200" cy="128" rx="22" ry="16" fill="#D4956A" transform="rotate(-15,200,128)"/>
+    <ellipse cx="200" cy="128" rx="14" ry="10" fill="#2A2A2A" transform="rotate(-15,200,128)"/>
+    <ellipse cx="312" cy="128" rx="22" ry="16" fill="#D4956A" transform="rotate(15,312,128)"/>
+    <ellipse cx="312" cy="128" rx="14" ry="10" fill="#2A2A2A" transform="rotate(15,312,128)"/>
+
+    <!-- Eye mask -->
+    <ellipse cx="230" cy="172" rx="28" ry="22" fill="#2A2A2A"/>
+    <ellipse cx="282" cy="172" rx="28" ry="22" fill="#2A2A2A"/>
+
+    <!-- Eyes -->
+    <circle cx="230" cy="170" r="14" fill="white"/>
+    <circle cx="282" cy="170" r="14" fill="white"/>
+    <circle cx="233" cy="168" r="8" fill="#1B2B3A"/>
+    <circle cx="285" cy="168" r="8" fill="#1B2B3A"/>
+    <circle cx="236" cy="165" r="3" fill="white"/>
+    <circle cx="288" cy="165" r="3" fill="white"/>
+
+    <!-- Nose -->
+    <ellipse cx="256" cy="195" rx="10" ry="7" fill="#2A2A2A"/>
+
+    <!-- Mouth -->
+    <path d="M248 202 Q256 210 264 202" stroke="#2A2A2A" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Arms -->
+    <ellipse cx="220" cy="290" rx="22" ry="14" fill="#C48558" transform="rotate(25,220,290)"/>
+    <ellipse cx="292" cy="290" rx="22" ry="14" fill="#C48558" transform="rotate(-25,292,290)"/>
+
+    <!-- Paw details -->
+    <circle cx="208" cy="282" r="5" fill="#D4956A"/>
+    <circle cx="304" cy="282" r="5" fill="#D4956A"/>
+
+    <!-- Feet -->
+    <ellipse cx="230" cy="428" rx="24" ry="10" fill="#C48558"/>
+    <ellipse cx="282" cy="428" rx="24" ry="10" fill="#C48558"/>
+  </g>
+</svg>

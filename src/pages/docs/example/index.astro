@@ -1,0 +1,137 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro';
+import { getExampleSections } from '../../../lib/content';
+
+const sections = getExampleSections();
+const breadcrumbs = [
+  { label: 'Docs', href: '/docs' },
+  { label: 'Examples', href: '/docs/example' },
+];
+---
+
+<DocsLayout title="Example Content" breadcrumbs={breadcrumbs}>
+  <h1>Example Content</h1>
+  <p class="lead">
+    A complete set of demo content for <strong>Acme Anvils Corp</strong> — a fictional company that
+    shows an example every document type in the framework. Browse these to understand
+    what Meerkat produces and how to structure your own content.
+  </p>
+
+  <div class="sections">
+    {sections.map((section) => (
+      <div class="section-card" id={section.slug}>
+        <h2 class="section-title">
+          <span class="section-icon">
+            {section.slug === 'company' && '🏢'}
+            {section.slug === 'product' && '📦'}
+            {section.slug === 'competitors' && '🔍'}
+            {section.slug === 'industry' && '🌐'}
+            {section.slug === 'personas' && '👤'}
+            {section.slug === 'role' && '💼'}
+          </span>
+          {section.label}
+        </h2>
+        <ul class="file-list">
+          {section.files.map((file) => (
+            <li>
+              <a href={`/docs/example/${section.slug}/${file.slug}`} class="file-link">
+                <span class="file-name">{file.title}</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</DocsLayout>
+
+<style>
+  .lead {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--slate);
+    margin-bottom: 2.5rem;
+  }
+
+  .lead strong {
+    color: var(--cream);
+  }
+
+  .sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .section-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: rgba(245, 230, 211, 0.03);
+    border: 1px solid rgba(245, 230, 211, 0.07);
+    transition: all 0.2s;
+  }
+
+  .section-card:hover {
+    background: rgba(245, 230, 211, 0.05);
+    border-color: rgba(212, 149, 106, 0.12);
+  }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    padding: 0;
+    border: none;
+  }
+
+  .section-icon {
+    font-size: 1.25rem;
+  }
+
+  .file-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .file-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    color: rgba(245, 230, 211, 0.65);
+    font-size: 0.9rem;
+    transition: all 0.15s;
+  }
+
+  .file-link:hover {
+    color: var(--cream);
+    background: rgba(212, 149, 106, 0.08);
+  }
+
+  .file-link svg {
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all 0.15s;
+    color: var(--tawny);
+  }
+
+  .file-link:hover svg {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @media (max-width: 640px) {
+    .sections {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,26 @@
+---
+import DocsLayout from '../../../../layouts/DocsLayout.astro';
+import { getExampleSections, getExamplePage } from '../../../../lib/content';
+
+export function getStaticPaths() {
+  const sections = getExampleSections();
+  const paths: { params: { section: string; slug: string } }[] = [];
+  for (const sec of sections) {
+    for (const file of sec.files) {
+      paths.push({ params: { section: sec.slug, slug: file.slug } });
+    }
+  }
+  return paths;
+}
+
+const { section, slug } = Astro.params;
+const page = getExamplePage(section, slug);
+
+if (!page) {
+  return Astro.redirect('/docs/example');
+}
+---
+
+<DocsLayout title={page.title} breadcrumbs={page.breadcrumbs}>
+  <Fragment set:html={page.html} />
+</DocsLayout>
