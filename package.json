@@ -9,11 +9,11 @@
     "deploy": "astro build && netlify deploy --dir=dist --prod"
   },
   "dependencies": {
-    "astro": "^5.5.0",
+    "astro": "^6.2.1",
     "gray-matter": "^4.0.3",
-    "marked": "^17.0.3"
+    "marked": "^18.0.3"
   },
   "devDependencies": {
-    "netlify-cli": "^24.0.0"
+    "netlify-cli": "^26.0.0"
   }
 }

@@ -3,7 +3,7 @@ import path from 'node:path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 
-const ROOT = process.env.MEERKAT_ROOT || path.resolve(import.meta.dirname, '..', '..', '..', 'meerkat');
+const ROOT = process.env.MEERKAT_ROOT || path.resolve(process.cwd(), '..', 'meerkat');
 
 export interface NavItem {
   label: string;
@@ -87,15 +87,18 @@ export function getSkills(): SkillEntry[] {
 
   // Order to match the README grouping
   const order = [
-    'company-onboarding',
-    'insights-extractor',
-    'opportunity-interviewer',
-    'assumption-identifier',
-    'validation-suggester',
+    'onboard',
+    'synthesise-research',
+    'start-prd',
+    'identify-prd-assumptions',
+    'suggest-discovery-plan',
+    'check-prd-ready',
     'research-competitors',
     'monitor-competitors',
-    'research-industry-sources',
+    'research-industry',
     'monitor-industry',
+    'push',
+    'pull',
   ];
 
   const sorted = dirs.sort((a, b) => {
