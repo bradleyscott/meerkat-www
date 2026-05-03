@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="bgGlow" cx="25%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#D4956A" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#D4956A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="badgeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="60%" stop-color="#D4956A" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#D4956A" stop-opacity="0.18"/>
+    </radialGradient>
+    <linearGradient id="headGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D4956A"/>
+      <stop offset="100%" stop-color="#B8754A"/>
+    </linearGradient>
+    <linearGradient id="taglineGrad" x1="524" y1="0" x2="1140" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D4956A"/>
+      <stop offset="50%" stop-color="#E8A840"/>
+      <stop offset="100%" stop-color="#5B8C6E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1B2B3A"/>
+  <rect width="1200" height="630" fill="url(#bgGlow)"/>
+
+  <!-- Badge glow halo -->
+  <circle cx="240" cy="315" r="210" fill="url(#badgeGlow)"/>
+
+  <!-- Meerkat head mark (logo-mark content, scale 1.25x, centered at 240,315) -->
+  <g transform="translate(80, 155) scale(1.25)">
+    <circle cx="128" cy="128" r="124" fill="#1B2B3A"/>
+    <g transform="translate(128,128) scale(1.25) translate(-128,-128)">
+      <ellipse cx="128" cy="138" rx="68" ry="62" fill="url(#headGrad)"/>
+      <ellipse cx="76" cy="90" rx="20" ry="14" fill="#D4956A" transform="rotate(-15,76,90)"/>
+      <ellipse cx="76" cy="90" rx="13" ry="9" fill="#2A2A2A" transform="rotate(-15,76,90)"/>
+      <ellipse cx="180" cy="90" rx="20" ry="14" fill="#D4956A" transform="rotate(15,180,90)"/>
+      <ellipse cx="180" cy="90" rx="13" ry="9" fill="#2A2A2A" transform="rotate(15,180,90)"/>
+      <ellipse cx="104" cy="134" rx="26" ry="20" fill="#2A2A2A"/>
+      <ellipse cx="152" cy="134" rx="26" ry="20" fill="#2A2A2A"/>
+      <circle cx="104" cy="132" r="13" fill="white"/>
+      <circle cx="152" cy="132" r="13" fill="white"/>
+      <circle cx="107" cy="130" r="7.5" fill="#1B2B3A"/>
+      <circle cx="155" cy="130" r="7.5" fill="#1B2B3A"/>
+      <circle cx="110" cy="127" r="2.8" fill="white"/>
+      <circle cx="158" cy="127" r="2.8" fill="white"/>
+      <ellipse cx="128" cy="156" rx="9" ry="6.5" fill="#2A2A2A"/>
+      <path d="M121 163 Q128 170 135 163" stroke="#2A2A2A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Divider -->
+  <line x1="476" y1="100" x2="476" y2="530" stroke="rgba(212,149,106,0.08)" stroke-width="1"/>
+
+  <!-- Brand name -->
+  <text x="524" y="258" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="72" font-weight="800" letter-spacing="-2" fill="#FAF7F2">meerkat</text>
+
+  <!-- Tagline line 1 -->
+  <text x="526" y="324" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="28" font-weight="400" fill="#FAF7F2">Always on the lookout.</text>
+
+  <!-- Tagline line 2 - gradient -->
+  <text x="526" y="370" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="28" font-weight="600" fill="url(#taglineGrad)">So you build the right thing.</text>
+
+  <!-- Separator -->
+  <line x1="526" y1="408" x2="790" y2="408" stroke="rgba(212,149,106,0.2)" stroke-width="1"/>
+
+  <!-- Subtitle -->
+  <text x="526" y="445" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="17" font-weight="400" fill="#64748B">Open-source framework for AI-powered product thinking</text>
+</svg>
